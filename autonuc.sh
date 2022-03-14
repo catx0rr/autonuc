@@ -21,23 +21,23 @@
 #		Use the commands below instead of the numbers on the screen.
 #	
 #	fastscan - Perform Fast, but noisy nuclei scan
-#	politescan - Perform Low bandwidth polite nuclei scan
+#	progscan - Perform Low bandwidth progressive nuclei scan
 #	pingsweep - Perform ping sweep on target CIDRs or input file
 #	portscan - Perform port scan on target CIDRs or input file
 #	nucleiscan - Reads a file and perform nuclei scan
-#	domainenumerate - Enumerate domains and subdomains and replace it with IP addresses
+#	denumerate - Enumerate domains and subdomains and replace it with IP addresses
 #	config - View Configuration
+#	cleardata - Clear all working data
 #	update - Update new nuclei templates fresh from github repository
-#	help - View the help screen
 #	quit | exit | x | q - quit autonuc.sh
+#
 #
 path=`dirname $0`
 source $path/config/autonuc.conf
 
 function main
 {
-	show_menu
+	show_main_menu
 }
 
 main
-

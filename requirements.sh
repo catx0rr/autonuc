@@ -9,12 +9,12 @@ function install_banner
 / /_/ / /_/ / /_/ /_/ / /|  / /_/ / /___   
 \__,_/\__,_/\__/\____/_/ |_/\____/\____/   
                                            
-	      /\     |\**/|      
- 	     /  \    \ == /
-	     |  |     |  |
-	     |  |     |  |
-	    / == \    \  /
-	    |/**\|     \/
+	        |\**/|      
+ 	        \ == /
+	         |  |
+	         |  |
+	         \  /
+	          \/
 
 [*] Installing autoNUC..'
 
@@ -46,6 +46,8 @@ function install_go
 {
 	echo -e "[*] Installing golang.."
 	apt-get -qq install golang-go 1>/dev/null
+	#install bc calc
+	apt-get -qq install bc 1>/dev/null
 	echo -e "[+] Done.."
 }
 
@@ -92,11 +94,27 @@ function install_httpx
 	echo -e "[+] Done..\n\n"
 }
 
-install_banner
-install_go
-install_nuclei
-install_httpx
-ready_banner
+function start_install
+{
+	echo -ne "[>] Do you want to install all autoNUC required packages?[y/N]>> "
+	read getopt
 
+	case $getopt in
+		[Yy]|[Yy][Ee][Ss])
+			install_banner
+			install_go
+			install_nuclei
+			install_httpx
+			ready_banner
+			;;
+		[Nn]|[Nn][Oo])
+			echo -e "[-] Exiting Installer.."
+			exit 0
+			;;
+		*)
+			start_install
+			;;
+	esac
+}
 
-		
+start_install
