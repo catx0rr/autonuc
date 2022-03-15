@@ -113,11 +113,17 @@ function start_install
 
 	case $getopt in
 		[Yy]|[Yy][Ee][Ss])
-			install_banner
-			install_go
-			install_nuclei
-			install_httpx
-			ready_banner
+			if [[ $UID -eq 0 ]]
+			then
+				install_banner
+				install_dirs
+				install_go
+				install_nuclei
+				install_httpx
+				ready_banner
+			else
+				echo -e "[-] Must be installed by root.."
+			fi
 			;;
 		[Nn]|[Nn][Oo])
 			echo -e "[-] Exiting Installer.."
