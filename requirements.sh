@@ -51,6 +51,18 @@ function install_go
 	echo -e "[+] Done.."
 }
 
+function install_dirs
+{
+	mkdir -p ./_nuclei
+	mkdir -p ./_nuclei/result
+	mkdir ./_sweep
+	mkdir ./_domain
+	mkdir ./_ports
+	mkdir -p ./_domain/result
+	mkdir -p ./_domain/raw
+	mkdir -p ./_domain/data
+	mkdir -p ./_domain/httpx
+}
 function install_nuclei 
 {
 	rm -rf ./pkg/nuclei_*.*.*_linux_amd64.zip 2>/dev/null

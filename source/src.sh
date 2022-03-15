@@ -223,11 +223,11 @@ function nuclei_vascan
 			do
 				echo -e "${grn}[+]${end} Selected $(pwd)/domain path.."
 				echo -e "${prp}[*]${end} Starting nuclei on target $(echo $i | cut -d'/' -f4).."
-				echo -e "${ylw}[>]${end} Files will be saved on $(pwd)/_nuclei/results..\n"
+				echo -e "${ylw}[>]${end} Files will be saved on $(pwd)/_nuclei/result..\n"
 				
 				timestart=$(date +%s.%N)
 				cat $i | nuclei -silent -rl 300 -ni -t $path/_nuclei/nuclei-templates/all \
-					| tee -a $path/_nuclei/results/$(echo $i | cut -d'/' -f4).nuclei
+					| tee -a $path/_nuclei/result/$(echo $i | cut -d'/' -f4).nuclei
 				timeend=$(date +%s.%N)
 				echo -e "\n${grn}[+]${end} Took $(echo $timeend - $timestart | bc -l) for $(echo $i | cut -d'/' -f4) to finish.."
 
@@ -324,11 +324,11 @@ function clear_alldata
 			for i in ${_nuclei_dir[@]}
 			do
 				echo -e "${red}[-]${end} Deleting files from _nuclei/$i directory.."
-				rm -rf $path/_nuclei/results/* 2>/dev/null
+				rm -rf $path/_nuclei/result/* 2>/dev/null
 				randelay
 			done
 			randelay
-			echo -e "${grn}[+]${end} _nuclei/results directory purged. Done.\n"
+			echo -e "${grn}[+]${end} _nuclei/result directory purged. Done.\n"
 			echo -e "${red}[!]${end} Clearing data in _sweep directory.."
 			randelay
 			rm -rf $path/_sweep/* 2>/dev/null
