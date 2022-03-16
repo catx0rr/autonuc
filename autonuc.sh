@@ -4,7 +4,7 @@
 #	├─┤│ │ │ │ │║║║║ ║║   └─┐├─┤
 #	┴ ┴└─┘ ┴ └─┘╝╚╝╚═╝╚═╝o└─┘┴ ┴
 #
-#	| automated nuclei scanning tool |
+#	| automated enumeration and nuclei scanning tool |
 #
 #	Author: Raw Etnerrot (catx0rr)
 #	Github: https://github.com/catx0rr/autonuc.git

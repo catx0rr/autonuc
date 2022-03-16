@@ -3,18 +3,19 @@
 function show_banner 
 {
 	banner='
-               __        _   ____  ________
-  ____ ___  __/ /_____  / | / / / / / ____/
- / __ `/ / / / __/ __ \/  |/ / / / / /     
-/ /_/ / /_/ / /_/ /_/ / /|  / /_/ / /___   
-\__,_/\__,_/\__/\____/_/ |_/\____/\____/   
-                                           '
+                   __        _   ____  ________
+      ____ ___  __/ /_____  / | / / / / / ____/
+     / __ `/ / / / __/ __ \/  |/ / / / / /     
+    / /_/ / /_/ / /_/ /_/ / /|  / /_/ / /___   
+    \__,_/\__,_/\__/\____/_/ |_/\____/\____/'
 	clear
 	echo -e "${grn}$banner \n${end}"
 	echo -e "
-	${grn}Author:${end} ${ylw}Raw Etnerrot (catx0rr)${end}
-	${grn}Github:${end} ${blu}https://github.com/catx0rr/autonuc.git${end}
-	"
+${ylw}|${end} ${blu}automated enumeration and nuclei scanning tool${end} ${ylw}|${end}
+
+   	 ${ylw}Author:${end} ${blu}Raw Etnerrot (catx0rr)${end}
+  ${ylw}Github:${end} ${blu}https://github.com/catx0rr/autonuc.git${end}
+"
 }
 
 function show_selection 

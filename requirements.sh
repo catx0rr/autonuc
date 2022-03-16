@@ -46,8 +46,8 @@ function install_go
 {
 	echo -e "[*] Installing golang.."
 	apt-get -qq install golang-go 1>/dev/null
-	#install bc calc
 	apt-get -qq install bc 1>/dev/null
+	go install github.com/jingweno/ccat@latest 1>/dev/null
 	echo -e "[+] Done.."
 }
 
@@ -57,11 +57,13 @@ function install_dirs
 	mkdir -p ./_nuclei/result
 	mkdir ./_sweep
 	mkdir ./_domain
-	mkdir ./_ports
 	mkdir -p ./_domain/result
 	mkdir -p ./_domain/raw
 	mkdir -p ./_domain/data
 	mkdir -p ./_domain/httpx
+	mkdir ./_ports
+	mkdir -p ./_ports/result
+	mkdir -p ./_ports/httpx
 }
 function install_nuclei 
 {
