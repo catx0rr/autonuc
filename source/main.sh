@@ -79,5 +79,3 @@ function show_main_menu
 	esac
 }
 
-show_main_menu
-

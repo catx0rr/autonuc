@@ -32,12 +32,15 @@
 #	quit | exit | x | q - quit autonuc.sh
 #
 #
+
 path=`dirname $0`
 source $path/config/autonuc.conf
 
 function main
 {
+	scan_projectdir
 	show_main_menu
 }
 
+checkpath
 main

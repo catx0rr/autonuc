@@ -47,6 +47,7 @@ function install_go
 	echo -e "[*] Installing golang.."
 	apt-get -qq install golang-go 1>/dev/null
 	apt-get -qq install bc 1>/dev/null
+	apt-get -qq install ipcalc 1>/dev/null
 	go install github.com/jingweno/ccat@latest 1>/dev/null
 	echo -e "[+] Done.."
 }

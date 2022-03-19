@@ -1,5 +1,10 @@
 #!/bin/bash
 
+function scan_projectdir
+{
+	check_projectname
+}
+
 function high_radar_scan
 {
 	show_banner
